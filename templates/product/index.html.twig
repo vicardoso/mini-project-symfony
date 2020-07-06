@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}My Products{% endblock %}
+
+{% block body %}
+<!DOCTYPE html>
+<html>
+  <div class = "container">
+    <h2>My products<h2/>
+      <a class="nav-link" href="{{ path("Product_create")}}"> Add Product </a>
+        <tbody>
+        <ul>
+        {% for category in categories %}
+        <li>{{ category.title }}</li>
+        <ul>
+          {% for product in category.products %}
+        <li>{{ product.title }},  {{ product.description }},  {{product.price}}€</li>
+        <img src="{{product.image}}" alt="image"/>
+          {% endfor %}
+        </ul>
+          {% endfor %}
+        </ul>
+    </tbody>
+  </div>
+</html>
+{% endblock %}

@@ -4,3 +4,30 @@
 #index:
 #    path: /
 #    defaults: { _controller: 'App\Controller\DefaultController::index' }
+
+# config/routes.yaml
+# app/config/routing.yml
+Product_update:
+  path: /product/edit/{id}
+  defaults: { _controller: App\Controller\ProductController:update }
+
+Product_delete:
+  path: /product/delete/{id}
+  defaults: { _controller: App\Controller\ProductController:delete }
+
+Product_Category:
+  path: /procat
+  defaults: { _controller: App\Controller\ProductController:index }
+
+
+indexAction:
+  path: /products
+  defaults: { _controller: App\Controller\ProductController:index }
+
+showAction:
+  path: /product/{id}
+  defaults: { _controller: App\Controller\ProductController:show }
+
+Product_create:
+  path: /add
+  defaults: { _controller: App\Controller\ProductController:createProduct }
